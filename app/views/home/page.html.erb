@@ -1,0 +1,14 @@
+
+<br />
+<% if current_user %>
+
+ <h4 class="text-center text-primary">Hello <%= current_user.email %></h4>
+
+ <%= button_to "Logout",  destroy_user_session_path, method: :delete, class: "btn btn-primary mt-4"  %> 
+
+ <%= link_to "Project ", projects_path ,class: "btn btn-success mt-4" %>
+<% else %>
+
+<%= link_to  "Sign up", new_user_registration_path, class: "btn mt-4" %>
+          <%= link_to "Login", new_user_session_path, class: "btn mt-4" %>
+<% end %>
